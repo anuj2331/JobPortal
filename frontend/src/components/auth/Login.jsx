@@ -12,12 +12,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "../../redux/authSlice";
 import { Loader2 } from "lucide-react";
 
+
 const Login = () => {
   const [input, setInput] = useState({
     email: "",
     password: "",
     role: "",
-    
+
   });
   const { loading, user } = useSelector((store) => store.auth);
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ const Login = () => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
+  
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
